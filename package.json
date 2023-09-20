@@ -1,0 +1,26 @@
+{
+  "name": "new-folder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync": "browser-sync start --server --files \"**/*\"",
+    "watch:dev": "nodemon -x npm run dev",
+    "watch": "run-p watch:dev sync",
+    "quave-eslint": "eslint . --fix",
+    "quave-prettier": "prettier --write \"**/*.js\"",
+    "quave-check": "npm run quave-eslint && npm run quave-prettier"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@quave/quave"
+    ]
+  },
+  "devDependencies": {
+    "@quave/eslint-config-quave": "^1.0.7",
+    "browser-sync": "^2.27.7",
+    "prettier-plugin-tailwindess": "^0.1.8",
+    "npm-run-all": "^4.1.5"
+  }
+}
